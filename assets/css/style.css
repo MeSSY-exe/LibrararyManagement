@@ -24,6 +24,8 @@
   --text-primary-color: #a2b2ba;
   --text-secondary-color: #8aa4b1;
 
+  --background-tertiary: #627D8A;
+
   /* sizing */
   --border-thickness: 2px;
 }
@@ -80,8 +82,6 @@ input:focus-visible {
 }
 
 button {
-  /* --border-radius: 50px; */
-  /* --btn-background-color: #FFF; */
   width: 175px;
   border-radius: var(--border-radius, 50px);
   border: none;
@@ -90,7 +90,7 @@ button {
   background-color: var(--btn-background-color, var(--background-secondary));
   font-size: 20px;
   font-weight: 700;
-  color: var(--primary-color);
+  color: var(--btn-text-color, var(--primary-color));
   text-transform: capitalize;
   cursor: pointer;
   box-shadow: 0px 320px 89px 0px rgba(123, 177, 204, 0),
@@ -100,6 +100,10 @@ button {
     0px 13px 28px 0px rgba(123, 177, 204, 0.1);
 }
 
+.button-secondary {
+  --btn-background-color: #627d8a;
+  --btn-text-color: #fff;
+}
 /* classes */
 .flex {
   display: flex;
@@ -109,13 +113,14 @@ button {
   display: grid;
 }
 
-.logout{
+.logout {
   justify-content: space-between;
   left: 20px;
   padding: 0;
 }
 
-.page-indicator, .logout {
+.page-indicator,
+.logout {
   display: flex;
   font-weight: 600;
   font-size: 18px;
@@ -133,11 +138,12 @@ button {
     0px 13px 28px 0px rgba(123, 177, 204, 0.1);
 }
 
-.page-indicator{
+.page-indicator {
   right: 20px;
 }
 
-.page-indicator img, .logout img {
+.page-indicator img,
+.logout img {
   height: 30px;
   width: 30px;
   margin-left: 20px;
@@ -213,10 +219,12 @@ button {
 }
 
 .dashboard {
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 487px 682px;
+  gap: 100px;
 }
 
 .options {
+  flex-direction: column;
   grid-column-start: 1;
   grid-column-end: 2;
 }
@@ -233,6 +241,15 @@ button {
   border-radius: 20px;
 }
 
+.options ul li.active {
+  background: var(--background-tertiary);
+  color: #fff;
+}
+
+.options ul li.active a {
+  color: #fff;
+}
+
 .options ul li a {
   font-size: 20px;
   display: flex;
@@ -245,10 +262,26 @@ button {
   width: 50px;
 }
 
+.options button {
+  margin-top: 20px;
+}
+
 .dashboard-image {
   background: radial-gradient(
     50% 50% at 50% 50%,
     rgba(143, 172, 187, 0.5) 0%,
     rgba(219, 234, 241, 0.1) 100%
   );
+}
+
+.dashboard-form {
+  background-color: var(--background-color);
+  border-radius: 30px;
+  padding: 40px 20px;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.dashboard-form input {
+  width: 100%;
 }
