@@ -81,7 +81,7 @@ input:focus-visible {
   border: var(--border-thickness) solid var(--secondary-color);
 }
 
-button {
+button, #cancel_btn{
   width: 175px;
   border-radius: var(--border-radius, 50px);
   border: none;
@@ -220,7 +220,7 @@ button {
 
 .dashboard {
   grid-template-columns: 487px 682px;
-  gap: 100px;
+  gap: 0 100px;
 }
 
 .options {
@@ -234,23 +234,15 @@ button {
   gap: 50px;
 }
 
-.options ul li {
-  background: #e2eaee;
-  width: 487px !important;
-  padding: 20px 41px 19px 54px;
-  border-radius: 20px;
-}
-
-.options ul li.active {
+.options ul a.active {
   background: var(--background-tertiary);
   color: #fff;
 }
 
-.options ul li.active a {
-  color: #fff;
-}
-
 .options ul li a {
+  padding: 20px 41px 19px 54px;
+  border-radius: 20px;
+  background: #e2eaee;
   font-size: 20px;
   display: flex;
   align-items: center;
@@ -262,7 +254,7 @@ button {
   width: 50px;
 }
 
-.options button {
+#cancel_btn {
   margin-top: 20px;
 }
 
@@ -274,12 +266,17 @@ button {
   );
 }
 
-.dashboard-form {
+.dashboard-form-container {
   background-color: var(--background-color);
   border-radius: 30px;
   padding: 40px 20px;
+}
+
+.dashboard-form {
+  width: 100%;
   flex-direction: column;
   gap: 30px;
+
 }
 
 .dashboard-form input {

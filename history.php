@@ -1,3 +1,12 @@
-<div class="dashboard-form flex">
+<?php
+include ("common/header.php");
+?>
+
+
+
 
 </div>
+
+<?php
+include ("common/footer.php");
+?>
